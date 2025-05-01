@@ -51,6 +51,7 @@ export const config = [
     plugins: {
       import: (await import('eslint-plugin-import')).default,
       perfectionist: (await import('eslint-plugin-perfectionist')).default,
+      'unused-imports': (await import('eslint-plugin-unused-imports')).default,
     },
     languageOptions: {
       globals: {
@@ -167,6 +168,8 @@ export const config = [
       'unicode-bom': [ERROR, 'never'],
       'use-isnan': ERROR,
       'valid-typeof': ERROR,
+      'unused-imports/no-unused-imports': ERROR,
+      'unused-imports/no-unused-vars': [ERROR, { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' }],
       curly: [ERROR, 'multi-line'],
       eqeqeq: [ERROR, 'always', { null: 'ignore' }],
 
