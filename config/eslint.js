@@ -344,6 +344,18 @@ export const config = [
             { allowTernary: true },
           ],
           '@typescript-eslint/unified-signatures': ERROR,
+          // Disallow the TypeScript `as` operator for type assertions.
+          // Using `assertionStyle: "never"` forbids both `as` and angle-bracket
+          // assertions, effectively preventing all direct casts.
+          '@typescript-eslint/consistent-type-assertions': [
+            ERROR,
+            {
+              assertionStyle: 'never',
+            },
+          ],
+
+          // Disallow non-null assertions (the `!` postfix operator).
+          '@typescript-eslint/no-non-null-assertion': ERROR,
           'import/consistent-type-specifier-style': [ERROR, 'prefer-inline'],
 
           // Disable rules from presets
